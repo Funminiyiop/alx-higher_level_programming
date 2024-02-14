@@ -1,10 +1,7 @@
 #!/usr/bin/node
 
-// script to print strings using a loop
+const languages = ['C is fun', 'Python is cool', 'JavaScript is amazing']
 
-let i
-const myString = ['C is fun', 'Python is cool', 'JavaScript is amazing']
-
-for (i = 0; i < 3; i++) {
-  console.log(myString[i])
+for (let i = 0; i < languages.length; ++i) {
+  console.log(languages[i])
 }
