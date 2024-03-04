@@ -33,7 +33,7 @@ Write a Bash script that takes in a URL, sends a request to that URL, and displa
 
 ## cURL to the end
 
-Write a Bash script that takes in a URL, sends a GET request to the URL, and displays the body of the response
+Write a Bash script that takes in URL, sends a GET request to the URL, and displays the body of the response
 
 - Display only body of a 200 status code response
 - You have to use `curl`
