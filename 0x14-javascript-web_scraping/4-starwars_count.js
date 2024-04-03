@@ -1,12 +1,19 @@
 #!/usr/bin/node
 const request = require('request');
-request(process.argv[2], function (error, response, body) {
+const apiUrl = process.argv[2];
+request(apiUrl, (error, response, body) => {
   if (!error) {
-    const results = JSON.parse(body).results;
-    console.log(results.reduce((count, movie) => {
-      return movie.characters.find((character) => character.endsWith('/18/'))
-        ? count + 1
-        : count;
-    }, 0));
+    const res = JSON.parse(body).results;
+    let count = 0;
+    for (let i = 0; i < res.length; i++) {
+      for (let j = 0; j < res[i].characters.length; j++) {
+        if (res[i].characters[j].includes('18')) {
+          count++;
+        }
+      }
+    }
+    console.log(count);
+  } else {
+    console.log(error);
   }
 });
